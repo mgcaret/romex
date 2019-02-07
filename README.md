@@ -15,6 +15,7 @@ Unlike the Apple //c firmware, there is no free space in the //e firmware.  Ther
 
  - Sacrificing the tape code ('no_tape').
    - This version has a terse menu in order to fit in the available space.
+   - The diagnostics may be entered by pressing both apple keys with ctrl+reset.
  - Sacrificing the diagnostic code ('no_diags').
    - This version has a nicer menu that takes advantage of available space.
 
