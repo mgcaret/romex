@@ -7,13 +7,16 @@ ROM eX is a **BETA** enhancement to the enhanced Apple //e firmware ROM.
  - Upon Control+CA/Option+Reset, presents a menu allowing you to choose to enter the monitor or start the boot a specific slot.
  - Menu displays the type of card found in the slot.
  - Menu identifies Apple II workstation cards and correctly boots them by prompting to press open-apple to start the boot.
+ - Delete key works like the left arrow in programs that read input lines using the monitor ROM.
 
 ## Tradeoffs/Flavors
 
 Unlike the Apple //c firmware, there is no free space in the //e firmware.  Therefore sacrifices must be made.  With that in mind, ROM eX comes in two flavors:
 
  - Sacrificing the tape code ('no_tape').
+   - This version has a terse menu in order to fit in the available space.
  - Sacrificing the diagnostic code ('no_diags').
+   - This version has a nicer menu that takes advantage of available space.
 
 ## Building
 

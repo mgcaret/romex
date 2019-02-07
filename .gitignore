@@ -14,3 +14,4 @@ make_rom.sh
 rom.sha256
 **/.DS_Store
 t
+x.rom
