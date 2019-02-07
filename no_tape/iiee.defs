@@ -1,0 +1,4 @@
+.include "../common/iiee.defs"
+
+no_tape = 1
+

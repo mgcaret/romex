@@ -1,0 +1,16 @@
+*.o65
+*.lbl
+*.bin
+*.bin.cd
+*.bin.ef
+*.swp
+*.zip
+*.o
+*.lst
+*.b
+*.po
+copyrom.sh
+make_rom.sh
+rom.sha256
+**/.DS_Store
+t

@@ -1,0 +1,70 @@
+; macros
+
+; use at beginning of patch, set maxsize=0 for no max size check
+.macro  rompatch addr,maxsize,desc
+  patchstart = addr
+  .org patchstart
+  patchmsize = maxsize
+  .define patchdesc desc
+  .if patchmsize > 0
+    .out .sprintf("  ROM patch %s bgn %x, max size %d", patchdesc, patchstart, patchmsize)
+  .else
+    .out .sprintf("  ROM patch %s bgn %x, max size unconstrained", patchdesc, patchstart)
+  .endif
+.endmacro
+
+; use at end of patch, displays info about the patch
+; and checks for over-size patch
+.macro  endpatch
+  .if patchmsize > 0
+    .out .sprintf("  ROM patch %s end %x; size: %d of %d, %d left", patchdesc, *-1, *-patchstart, patchmsize, patchmsize-*+patchstart)
+    .assert * <= (patchstart+patchmsize), error, .sprintf("  ROM patch %s code too big", patchdesc)
+  .else
+    .out .sprintf("  ROM patch %s end %x; size: %d", patchdesc, *-1, *-patchstart)
+  .endif
+.endmacro
+
+; hardware
+;set80col = $c001
+setslotcxrom = $c006
+setintcxrom = $c007
+setaltchar = $c00f
+butn0     = $c061
+butn1     = $c062
+kbd       = $c000
+kbdstrb   = $c010
+romin     = $c081
+
+
+; ZP locations
+ch        = $24                 ; cursor horizontal pos
+cv        = $25
+
+; locations
+softev    = $3f2
+pwerdup   = $3f4
+ampervec  = $3f5
+
+; values
+pwrbyte = $a5
+menucol = 10                    ; column for menu entries
+
+; entries
+init      = $fb2f               ; init text screen
+tabv      = $fb5b               ; vtab to a-reg
+vtab      = $fc22               ; vtab to cv
+sloop     = $faba               ; slot scan loop
+title     = $fb60               ; clear screen, display "Apple //e"
+bell1     = $fbdd               ; beep
+wait      = $fca8               ; waste time
+rdkey     = $fd0c               ; read keyboard
+cout      = $fded               ; character out
+setkbd    = $fe89               ; set keyboard as input
+setvid    = $fe93               ; set text screen as output
+rdchar    = $fd35               ; rdchar, used for delete key patch
+prhex     = $fde3               ; x,y preserved
+prbyte    = $fdda               ; x,y preserved
+monitor   = $ff59               ; monitor
+intcxrts  = $f8cb               ; switch in internal cx ROM and rts
+slotcxrts = $fec5               ; switch in slot cx ROM and rts
+
