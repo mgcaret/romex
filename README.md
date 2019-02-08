@@ -11,6 +11,8 @@ ROM eX is a **BETA** enhancement to the enhanced Apple //e firmware ROM.
 
 ## Tradeoffs/Flavors
 
+First and foremost, this requires a 65C02 or 658xx processor in your //e.
+
 Unlike the Apple //c firmware, there is no free space in the //e firmware.  Therefore sacrifices must be made.  With that in mind, ROM eX comes in two flavors:
 
  - Sacrificing the tape code ('no_tape').
