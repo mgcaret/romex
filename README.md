@@ -31,7 +31,7 @@ Change into the directory for your desired flavor and type 'rake' for a single R
 
 This ROM can be run in emulators that allow specifying a custom ROM image.  It is tested on Virtual ][.
 
-Note that as of 2/7/2019, it has *NOT* been tested on actual hardware, though there is no reason it should not work.
+Note that as of 2/7/2019, it has not been tested on actual hardware by the author, but as of 2/8/2019 Tony Diaz has reported success on a platinum //e.
 
 To install in real hardware, the appropriate EPROMs must be programmed and installed in the system.  A 27SF512 may work in //es equipped with a CF ROM socket, and 'rake sf512' will generate such an image (with 4 copies of the ROM in it).
 
