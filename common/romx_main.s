@@ -110,9 +110,9 @@ msg0:     .byte 3,menucol,"0 Monitor"
 .endif
           .byte 5,menucol,"Slots:"
           .byte 22,16,"By M.G."
-msg1:     .byte 23,13,"ROM eX 02-19A",13,menucol,$00
+msg1:     .byte 23,13,"ROM eX 02-19B",13,menucol,$00
 .if no_tape
-msg2:     .byte "ATalk ",$00
+msg2:     .byte "AT ",$00
 .else
 msg2:     .byte "AppleTalk ",$00
 .endif
@@ -128,5 +128,4 @@ msg6:     .byte "Smart",$00
 .else
 msg6:     .byte "SmartPort",$00
 .endif
-msg7:     .byte 3,16,"Press ",$C1,$00
-
+msg7:     .byte 3,15,"Press ",$C1,"+",$CD,$00

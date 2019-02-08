@@ -23,8 +23,11 @@
 .else
           jsr   $c606           ; display messsage
 .endif
-:         bit   butn0
-          bpl   :-
+          jsr   rdkey
+          cmp   #$8d
+          bne   atwait
+          bit   butn0
+          bpl   atwait
           rts
 .endproc
 
@@ -103,7 +106,11 @@ at_chk:
           iny
           cpy   #$FD
           bcc   at_chk
-done:     rts
+done:     
+.if 0 ; TEST: set to 1 to test AppleTalk boot function
+          sec
+.endif
+          rts
 atid:     .byte "ATLK"
 .endproc
 

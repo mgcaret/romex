@@ -55,6 +55,7 @@ tabv      = $fb5b               ; vtab to a-reg
 vtab      = $fc22               ; vtab to cv
 sloop     = $faba               ; slot scan loop
 title     = $fb60               ; clear screen, display "Apple //e"
+kbdwait   = $fb88               ; wait for keyboard input, print char
 bell1     = $fbdd               ; beep
 wait      = $fca8               ; waste time
 rdkey     = $fd0c               ; read keyboard
